@@ -1,16 +1,19 @@
 # 📈🚶‍♂️ Step Counter 
 
-This repository contains a step counter designed specifically for the wear OS of i.safe MOBILE watches. Not only does it capture steps using the step counter sensor, but it also offers a stopwatch feature.
-Important to note, resetting the stopwatch does not affect or reset the step counting. However, the step counter does reset upon starting the application.
+This repository contains a step counter designed specifically for the wear OS of i.safe MOBILE watches.
+Not only does it capture steps using the step counter sensor, but it also offers a stopwatch feature.
+Important to note, resetting the stopwatch does not affect or reset the step counting. However,
+the step counter does reset upon starting the application.
 
 
 ## 📋 Debug and Analyze 
-using Android Debug Bridge# to check the devices on the device including all type of sensors: 
+
+using Android Debug Bridge to check the devices on the device including all type of sensors: 
 
 1. ```adb shell```
 2. ```getevent -i```
-3. noting the device name -sc stands for step-counter :
- "GR5515-sc” device 9: /dev/input/event4"
+3. 3. noting the device name -**sc** stands for **s**tep-**c**ounter :
+ "GR5515-**sc** device 9: /dev/input/event4"
 4. ``` getevent /dev/input/event4 ```
 5. Shake the device to initiate the step counter sensor due to movement and check the output on the terminal
 
