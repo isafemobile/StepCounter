@@ -5,9 +5,18 @@ Not only does it capture steps using the step counter sensor, but it also offers
 Important to note, resetting the stopwatch does not affect or reset the step counting. However,
 the step counter does reset upon starting the application.
 
+> Warning: Debug mode must be acitvated
 
 ## 📋 Debug and Analyze 
 
+First, we activate debug mode on SW1.1 by following these steps:
+
+1. Press the **Power-Button**, scroll down, and choose **Settings**
+2. Scroll down to "About Device."
+3. Locate **SN No.** and press it 10 times continuously.
+4. Press the **Back-Button**.
+5. Press and hold the **Settings** label until "TestTools" opens, then activate the toggle for **Debuggable**
+   
 using Android Debug Bridge to check the devices on the watch including all type of sensors: 
 
 1. ```adb shell```
