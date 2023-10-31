@@ -18,7 +18,7 @@ using Android Debug Bridge# to check the devices on the device including all typ
 
 ## 🖼️ Screenshots
 
-<img src="/demo/screenshot_10.png.png" width="250"/> 
+<img src="/demo/screenshot_10.png" width="250"/> 
 
 ## ⚙️Technologies
 
