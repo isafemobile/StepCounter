@@ -8,7 +8,7 @@ the step counter does reset upon starting the application.
 
 ## 📋 Debug and Analyze 
 
-using Android Debug Bridge to check the devices on the device including all type of sensors: 
+using Android Debug Bridge to check the devices on the watch including all type of sensors: 
 
 1. ```adb shell```
 2. ```getevent -i```
