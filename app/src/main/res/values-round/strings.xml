@@ -1,0 +1,3 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="step_counter_text" tools:ignore="ExtraTranslation">Step Counter is Sensoring</string>
+</resources>
