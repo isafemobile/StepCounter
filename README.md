@@ -12,7 +12,7 @@ using Android Debug Bridge to check the devices on the device including all type
 
 1. ```adb shell```
 2. ```getevent -i```
-3. 3. noting the device name -**sc** stands for **s**tep-**c**ounter :
+3. noting the device name -**sc** stands for **s**tep-**c**ounter :
  "GR5515-**sc** device 9: /dev/input/event4"
 4. ``` getevent /dev/input/event4 ```
 5. Shake the device to initiate the step counter sensor due to movement and check the output on the terminal
