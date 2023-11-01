@@ -50,7 +50,6 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
 
     private lateinit var stepCpunterViewModel: StepCounterViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -111,6 +110,9 @@ private fun StopWatch(
     onReset: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    LaunchedEffect(Unit) {
+        onToggleRunning() // start timer
+    }
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center,
