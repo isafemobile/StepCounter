@@ -49,14 +49,14 @@ import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
-    private lateinit var stepCpunterViewModel: StepCounterViewModel
+    private lateinit var stepCounterViewModel: StepCounterViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         reformViewModel()
 
         setContent {
-            val stepCount by stepCpunterViewModel.stepCount.collectAsStateWithLifecycle()
+            val stepCount by stepCounterViewModel.stepCount.collectAsStateWithLifecycle()
             val stopWatchViewModel = viewModel<StopWatchViewModel>()
             val timerState by stopWatchViewModel.timerState.collectAsStateWithLifecycle()
             val stopWatchText by stopWatchViewModel.stopWatchText.collectAsStateWithLifecycle()
@@ -86,10 +86,10 @@ class MainActivity : ComponentActivity() {
 
     private fun reformViewModel() {
         val factory = StepCounterViewModelFactory(application)
-        stepCpunterViewModel =
-            ViewModelProvider(this, factory).get(StepCounterViewModel::class.java)
+        stepCounterViewModel =
+            ViewModelProvider(this, factory)[StepCounterViewModel::class.java]
         lifecycleScope.launch {
-            stepCpunterViewModel.stepCount.collect {
+            stepCounterViewModel.stepCount.collect {
                 Log.d(Constants.TAG, "trace Step Count: $it")
             }
         }
@@ -97,7 +97,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        stepCpunterViewModel.onCleared()
+        stepCounterViewModel.onCleared()
     }
 }
 
@@ -188,7 +188,7 @@ fun AnimatedSensoringText() {
     }
 
     Text(
-        text = "Step Counter is Sensoring",
+        text = "Step Counter is Sensing...",
         //text = stringResource(id = R.string.step_counter_text), //TODO add string resource cant be resolved!
         color = animatedColor,
         fontSize = 12.sp,
