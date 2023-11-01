@@ -1,11 +1,3 @@
-# 📈🚶‍♂️ Step Counter 
-
-This repository contains a step counter designed specifically for the wear OS of i.safe MOBILE watches.
-Not only does it capture steps using the step counter sensor, but it also offers a stopwatch feature.
-Important to note, resetting the stopwatch does not affect or reset the step counting. However,
-the step counter does reset upon starting the application.
-
-
 ## 📋 Debug and Analyze 
 
 > Warning: Debug mode must be acitvated
