@@ -5,9 +5,10 @@ Not only does it capture steps using the step counter sensor, but it also offers
 Important to note, resetting the stopwatch does not affect or reset the step counting. However,
 the step counter does reset upon starting the application.
 
-> Warning: Debug mode must be acitvated
 
 ## 📋 Debug and Analyze 
+
+> Warning: Debug mode must be acitvated
 
 First, we activate debug mode on SW1.1 by following these steps:
 
