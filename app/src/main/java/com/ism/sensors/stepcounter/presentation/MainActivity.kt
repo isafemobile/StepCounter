@@ -178,7 +178,9 @@ fun AnimatedSensoringText() {
         Color.DarkGray
     )
     val currentColorIndex = remember { mutableStateOf(0) }
-    val animatedColor by animateColorAsState(targetValue = colors[currentColorIndex.value])
+    val animatedColor by animateColorAsState(targetValue = colors[currentColorIndex.value],
+        label = ""
+    )
 
     LaunchedEffect(Unit) {
         while (true) {
