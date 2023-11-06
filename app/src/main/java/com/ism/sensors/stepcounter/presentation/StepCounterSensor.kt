@@ -5,6 +5,9 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.util.Log
+import com.ism.sensors.stepcounter.presentation.Constants.TAG
+import java.lang.Math.abs
 
 class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int) -> Unit) :
     SensorEventListener {
@@ -42,17 +45,19 @@ class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int
         event?.let {
             if (it.sensor.type == Sensor.TYPE_STEP_COUNTER) {
                 val currentTime = System.currentTimeMillis()
-                OnStepCounterChanged(stepCount)
+
+                Log.d(TAG, "onSensorChanged: ${it.values[0]}")
                 // Debounce check
                 //TODO ignore the debounce check at the moment in order to sense all sensor events
-                /*if (abs(currentTime - lastTime) > debounceTime) {
+                if (abs(currentTime - lastTime) > debounceTime) {
                     val stepsSinceLast = it.values[0].toInt() - lastStepCount
                     if (stepsSinceLast > 0) {
                         stepCount += stepsSinceLast
                         OnStepCounterChanged(stepCount)
                         lastStepCount = it.values[0].toInt()
                         lastTime = currentTime
-                    }*/
+                    }
+                }
             }
         }
     }
