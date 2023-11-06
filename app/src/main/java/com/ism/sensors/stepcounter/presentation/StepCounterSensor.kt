@@ -41,15 +41,17 @@ class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int
         event?.let {
             if (it.sensor.type == Sensor.TYPE_STEP_COUNTER) {
                 val currentTime = System.currentTimeMillis()
+                OnStepCounterChanged(stepCount)
                 // Debounce check
-                if (abs(currentTime - lastTime) > debounceTime) {
+                //TODO ignore the debounce check at the moment in order to sense all sensor events
+                /*if (abs(currentTime - lastTime) > debounceTime) {
                     val stepsSinceLast = it.values[0].toInt() - lastStepCount
                     if (stepsSinceLast > 0) {
                         stepCount += stepsSinceLast
                         OnStepCounterChanged(stepCount)
                         lastStepCount = it.values[0].toInt()
                         lastTime = currentTime
-                    }
+                    }*/
                 }
             }
         }
