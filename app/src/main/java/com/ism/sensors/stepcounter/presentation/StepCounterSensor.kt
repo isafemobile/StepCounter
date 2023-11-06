@@ -5,15 +5,16 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import java.lang.Math.abs
 
-class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int) ->Unit) : SensorEventListener {
+class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int) -> Unit) :
+    SensorEventListener {
 
     private val sensorManager: SensorManager =
         context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
     private val stepCounterSensor: Sensor? =
         sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
     private var stepCount: Int = 0
+
     // For debouncing
     private val debounceTime: Long = 1000 // in milliseconds
     private var lastTime: Long = 0
@@ -52,8 +53,8 @@ class StepCounterSensor(context: Context, private val OnStepCounterChanged: (Int
                         lastStepCount = it.values[0].toInt()
                         lastTime = currentTime
                     }*/
-                }
             }
         }
     }
 }
+

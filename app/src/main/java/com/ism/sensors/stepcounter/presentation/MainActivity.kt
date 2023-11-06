@@ -194,7 +194,7 @@ fun KeepScreenOn() {
     val context = LocalContext.current
     val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
     val wakeLock = remember {
-        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "myapp:keep_screen_on")
+        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "com.ism.sensors.stepcounter:keep_screen_on")
     }
 
     DisposableEffect(Unit) {
