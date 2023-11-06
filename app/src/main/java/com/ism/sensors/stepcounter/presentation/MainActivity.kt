@@ -85,7 +85,7 @@ class MainActivity : ComponentActivity() {
             ViewModelProvider(this, factory)[StepCounterViewModel::class.java]
         lifecycleScope.launch {
             stepCounterViewModel.stepCount.collect {
-                Log.d(Constants.TAG, "trace Step Count: $it")
+                Log.d(Constants.TAG, "trace Step Count in UI ==>: $it")
             }
         }
     }
@@ -117,6 +117,8 @@ private fun StopWatch(
         item {
             AnimatedSensoringText()
             Spacer(modifier = Modifier.height(4.dp))
+            CaptureTimeAtLastStep(stepCount, timer)
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = stepCount.toString(),
                 fontSize = 20.sp,
@@ -124,8 +126,6 @@ private fun StopWatch(
                 textAlign = TextAlign.Center,
                 color = Color(0xFFDE2921)
             )
-            Spacer(modifier = Modifier.height(4.dp))
-            CaptureTimeAtLastStep(stepCount, timer)
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = timer,
