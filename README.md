@@ -23,7 +23,7 @@ using Android Debug Bridge to check the devices on the watch including all type 
 
 ## 🖼️ Screenshots
 
-<img src="/demo/screenshot_10.png" width="250"/> 
+<img src="/demo/screenshot_379.png" width="250"/> 
 
 ## ⚙️Technologies
 
