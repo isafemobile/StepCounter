@@ -1,10 +1,12 @@
 ## 📋 Debug and Analyze 
 
 > Warning: Debug mode must be acitvated
-install ADB Wi-Fi to ease -debugging sensors on smartwatch without need for the dockstation that often disconnect upon moves. https://plugins.jetbrains.com/plugin/14969-adb-wi-fi 
+
+>🛠️ Install ADB Wi-Fi to ease debugging of the step counter sensor on smartwatches without the need for a dock station that often disconnects upon movement. [Check it out here!](https://plugins.jetbrains.com/plugin/14969-adb-wi-fi)
+ 
 
  ----
-Enable debuggable-mode on SW1.1:
+# Enable debuggable-mode on SW1.1:
 
 1. Press the **Power-Button**, scroll down, and choose **Settings**
 2. Scroll down to **About Device**
@@ -15,6 +17,8 @@ Enable debuggable-mode on SW1.1:
 using Android Debug Bridge to check the devices on the watch including all type of sensors: 
 
  ----
+ # Monitor sensor data of step counter
+ 
 1. ```adb shell```
 2. ```getevent -i```
 3. noting the device name -**sc** stands for **s**tep-**c**ounter :
@@ -23,13 +27,16 @@ using Android Debug Bridge to check the devices on the watch including all type 
 5. Shake the device to initiate the step counter sensor due to movement and check the output on the terminal
 
  ----
+  # Check who use sensorservice
+  
 ```adb shell dumpsys sensorservice```
 
 shows 2 active connections:
  - com.ism.sensors.stepcounter.presentation.StepCounterSensor
  - com.sikey.commonservice.service.sensor.SensorListener 
  ----
- 
+ # Check when sensor-event is being called
+
  ```adb logcat | Select-String "sensor"```
 logs shows on WatchShaking the following SENSOR_EVENT:
 - 11-07 13:13:09.020  1099  1460 D LocalSocketMessageParser: SENSOR_EVENT
@@ -39,6 +46,7 @@ $``` getevent /dev/input/event4 ``` send no data.
 
 
  ----
+ # Hardware details of step counter sensor
 
 $ ````adb shell cat /proc/bus/input/devices````
 Terminal output for Hardware Information for step counter:
