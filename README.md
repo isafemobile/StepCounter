@@ -23,7 +23,36 @@ using Android Debug Bridge to check the devices on the watch including all type 
 5. Shake the device to initiate the step counter sensor due to movement and check the output on the terminal
 
  ----
+```adb shell dumpsys sensorservice```
+
+shows 2 active connections:
+ - com.ism.sensors.stepcounter.presentation.StepCounterSensor
+ - com.sikey.commonservice.service.sensor.SensorListener 
+ ----
  
+ ```adb logcat | Select-String "sensor"```
+logs shows on WatchShaking the following SENSOR_EVENT:
+- 11-07 13:13:09.020  1099  1460 D LocalSocketMessageParser: SENSOR_EVENT
+
+while on the another terminal
+$``` getevent /dev/input/event4 ``` send no data. 
+
+
+ ----
+
+$ ````adb shell cat /proc/bus/input/devices````
+Terminal output for Hardware Information for step counter:
+-  I: Bus=0000 Vendor=0000 Product=0000 Version=0000
+N: Name="GR5515-sc"
+P: Phys=
+S: Sysfs=/devices/soc/78b7000.spi/spi_master/spi32766/spi32766.0/input/input4
+U: Uniq=
+H: Handlers=event4
+B: PROP=0
+B: EV=9
+B: ABS=100 8
+
+ ----
 ## 🖼️ Screenshots
 
 <img src="/demo/screenshot_379.png" width="250"/> 
