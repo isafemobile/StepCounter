@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation
+package com.isafemobile.stepcounter.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -39,6 +39,11 @@ import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.TimeTextDefaults
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
+import com.isafemobile.stepcounter.util.Constants
+import com.isafemobile.stepcounter.viewmodel.StepCounterViewModel
+import com.isafemobile.stepcounter.viewmodel.StepCounterViewModelFactory
+import com.isafemobile.stepcounter.viewmodel.StopWatchViewModel
+import com.isafemobile.stepcounter.viewmodel.TimerState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -134,34 +139,6 @@ private fun StopWatch(
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(4.dp))
-            /*Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Button(onClick = onToggleRunning) {
-                    Icon(
-                        imageVector = if (state == TimerState.RUNNING) {
-                            Icons.Default.Pause
-                        } else {
-                            Icons.Default.PlayArrow
-                        },
-                        contentDescription = null
-                    )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                Button(
-                    onClick = onReset,
-                    enabled = state != TimerState.RESET,
-                    colors = ButtonDefaults.buttonColors(
-                        backgroundColor = MaterialTheme.colors.surface
-                    )
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Stop,
-                        contentDescription = null
-                    )
-                }
-            }*/
         }
     }
 }
@@ -194,7 +171,7 @@ fun KeepScreenOn() {
     val context = LocalContext.current
     val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
     val wakeLock = remember {
-        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "com.ism.sensors.stepcounter:keep_screen_on")
+        powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "com.isafemobile.stepcounter:keep_screen_on")
     }
 
     DisposableEffect(Unit) {

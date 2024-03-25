@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation
+package com.isafemobile.stepcounter.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

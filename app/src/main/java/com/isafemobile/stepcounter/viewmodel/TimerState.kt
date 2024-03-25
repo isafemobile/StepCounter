@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation
+package com.isafemobile.stepcounter.viewmodel
 
 enum class TimerState {
     RUNNING, PAUSED, RESET

@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation
+package com.isafemobile.stepcounter.sensor
 
 import android.content.Context
 import android.hardware.Sensor
@@ -6,7 +6,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
-import com.ism.sensors.stepcounter.presentation.Constants.TAG
+import com.isafemobile.stepcounter.util.Constants.TAG
 
 class StepCounterSensor(context: Context, private val listener: StepCounterListener) :
     SensorEventListener {

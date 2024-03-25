@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ism.sensors.stepcounter"
+    namespace = "com.isafemobile.stepcounter"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.ism.sensors.stepcounter"
+        applicationId = "com.isafemobile.stepcounter"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
@@ -26,6 +26,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {

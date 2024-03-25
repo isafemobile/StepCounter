@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation.theme
+package com.isafemobile.stepcounter.ui.theme
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily

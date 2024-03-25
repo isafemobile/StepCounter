@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation.theme
+package com.isafemobile.stepcounter.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.wear.compose.material.MaterialTheme

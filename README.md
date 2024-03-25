@@ -48,7 +48,7 @@ Debug steps are taked to observe sensor behaviour and the Apps reponses. the App
 ```adb shell dumpsys sensorservice```
 shows 2 active connections:
 It is worth mentioning that when the sensor is properly started upon reboot, both apps are able to read the sensor data for counting steps without contradiction.
- - com.ism.sensors.stepcounter.presentation.StepCounterSensor [this Repository]
+ - com.isafemobile.stepcounter [this Repository]
  - com.sikey.commonservice.service.sensor.SensorListener 
 
 ## step 4. Check when sensor-event is being called

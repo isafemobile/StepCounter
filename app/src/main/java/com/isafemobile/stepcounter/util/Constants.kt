@@ -1,4 +1,4 @@
-package com.ism.sensors.stepcounter.presentation
+package com.isafemobile.stepcounter.util
 
 object Constants {
     const val TAG = "CheckMate"
