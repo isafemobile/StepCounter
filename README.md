@@ -1,14 +1,7 @@
-## StepCounter App:
+## IS-SW1.1 StepCounter Demo:
 This app is designed to track the number of steps you take, using **Sensor.TYPE_STEP_COUNTER** . When the app starts, it also starts a timer right away. As you walk, the app will show the number of steps you've taken and the time recorded by the timer on the screen.
 
- **Device Information**:
-| | |
-|---|---|
-| **Brand:** | isafemobile |
-| **Name:** | IS_SW1 |
-| **Android Version:** | 8.1.0 |
-| **SDK Version:** | 27 |
-| **OS** | AOSP |
+
  ----
 ## Problem Describtion:
 When the watch is restarted, it doesn't immediately begin transmitting data about steps taken. There's a noticeable lag—sometimes over a minute—before it starts recording the number of steps. However, after this initial delay, it updates the app with all the steps taken during that time. For example, in a demonstration video, the app shows a sudden jump to 668 steps at the very beginning, suggesting that the watch is counting steps but not sending the information in real-time for some reason.
